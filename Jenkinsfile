@@ -5,7 +5,12 @@ node {
  
          }
 
-
+   stage ('build'){ 
+        withMaven(globalMavenSettingsConfig: '', jdk: 'java', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
+    sh 'mvn clean package'
+}
+   
+   }
 
 
 

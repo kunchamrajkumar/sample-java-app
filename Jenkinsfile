@@ -14,7 +14,7 @@ node {
    stage ('deploy'){
         
            sshagent(['ssh_ID']) {
-                  sh " sudo scp -o StrictHostKeyChecking=no webapp/target/*.war ubuntu@44.201.79.229:/usr/local/tomcat9/webapps/ "
+                  sh " sudo scp StrictHostKeyChecking=no webapp/target/*.war ubuntu@44.201.79.229:/usr/local/tomcat9/webapps/ "
                    }
      
    }

@@ -8,10 +8,15 @@ node {
    stage ('build'){ 
         withMaven(globalMavenSettingsConfig: '', jdk: 'java', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
     sh 'mvn clean package'
-}
+           }
    
    }
-
+   stage ('deploy'){
+           sshagent(['ssh_ID']) {
+                  scp -o StrictHostKeyChecking=no webapp/target/*.war ubuntu@44.201.79.229:/usr/local/tomcat9/webapps/
+                   }
+     
+   }
 
 
 

@@ -11,11 +11,7 @@ node {
            }
    
    }
-   stage ('deploy'){
-        
-           
-     deploy adapters: [tomcat9(credentialsId: 'tomcatID', path: '', url: 'http://44.201.79.229:8081/')], contextPath: null, war: '**/*.war'
-   }
+   
 
 
 

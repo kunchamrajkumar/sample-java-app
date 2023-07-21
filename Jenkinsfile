@@ -7,7 +7,7 @@ node {
 
    stage ('build'){ 
         withMaven(globalMavenSettingsConfig: '', jdk: 'java', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
-    sh 'mvn deploy'
+    sh 'mvn clean deploy'
            }
    
    }
